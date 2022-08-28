@@ -1,0 +1,13 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    background: no-repeat url('friends.png') fixed center/100%;   
+}
+.container
+{
+    display: inline-block;
+    background-color: black;
+    height: 232px;
+
+}
