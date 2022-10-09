@@ -8,27 +8,33 @@
     <title>YarraDiChataa</title>
     <link rel="icon" type="image/x-icon" href="whatsapp.png">
     <link rel="stylesheet" href="style.css">
-    //fontawesome
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/0f3c009a2f.js" crossorigin="anonymous"></script>
+    <script defer src="http://localhost:8000/socket.io/socket.io.js"></script>   <!-- this connects client with server(from docs. localhost is by default) -->
+    <script defer src="client.js"></script> <!-- If defer is present, The script is downloaded in parallel to parsing the page(dom of page), and executed after the page has finished parsing. -->
 </head>
 
 <body>
     <div class="container">
         <div class="messages">
             <div class="text-send">
-                <h3>Akhil</h3>
-                <p>sdgb</p>
+            
             </div>
             <div class="text-receive">
-                <h3>Manav</h3>
-                <p>hi akhil</p>
+
             </div>
         </div>
     </div>
-    <form action="" >
-        <input type="text" name="messagesend" placeholder="Type here....">
-        <button type="submit" ><i class="fa-duotone fa-paper-plane-top"></i></button>
-    </form>
+        <div class="send">
+            <!-- form has onsubmit event which will be listened -->
+            <form action="#" id="sending_container">
+                <ul>
+                    <li><input type="text" name="messagesend" placeholder="Type here...."></li>
+                    <li><button type="submit"><i class="fa-solid fa-circle-arrow-right"></i></button></li>
+                </ul>
+            
+            </form>
+        </div>
 </body>
 
 </html>

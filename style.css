@@ -2,56 +2,99 @@ body
 {
     margin: 0;
     padding: 0;
-    background: no-repeat url('friends.png') fixed center/100%;   
-
+    background-image: url('friends.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* background: no-repeat url('friends.png') fixed center/100%;  */
 }
+
 .container
 {
     background-color: #f5f5f5;
-    margin: 50px 200px 50px 200px;
-    height: 540px;
+    margin: 6rem 15rem 6rem 15rem;
+    height: 40rem;
     opacity: 0.8;
     border-radius: 10px;
+    overflow-y: scroll;
+    min-width: 25rem;
 }
+
 .container .messages .text-send 
 {
-    padding: 5px;
+    /* padding: 5px; */
     background-color: #61ea69;
     border-radius: 25px;
     margin-left: auto;
     margin: 20px 20px 10px 10px;
 }
-.container .messages .text-send h3
-{
-    text-align: end;
-    margin-right: 20px;
-    text-decoration: underline;
-}
 .container .messages .text-send p
 {
     text-align: end;
     margin-right: 20px; 
-    
 }
 .container .messages .text-receive
 {
-    padding: 5px;
+    /* padding: 5px; */
     background-color:#61ea69;
     border-radius: 25px;
     margin: 20px 20px 10px 10px;
-}
-.container .messages .text-receive h3
-{
-    text-align: start;
-    margin-left: 20px;
-    text-decoration: underline;
 }
 .container .messages .text-receive p
 {
     text-align: start;
     margin-left: 20px;
 }
- form
+.send
 {
-    margin: auto;
+        background-color: #273be2;
+        border-radius: 10px;
+        margin: -5rem 15rem 0rem 15rem;
+        padding: .2rem;
+        min-width: 25rem;
+}
+.send form ul
+{
+        display: flex;
+        list-style: none;
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: center;
+}
+.send form ul li input
+{
+    border-radius: 5px;
+    padding: 1rem;
+    font-size: large;
+    margin-left: -2rem;
+}
+.send form ul li button
+{
+
+    border-radius: 1rem;
+    padding: 1.2rem;
+}
+.send form ul li button i
+{
+    font-size: x-large;
+}
+@media(max-width:600px) {
+    .container
+    {
+        margin-left: 10rem;
+    }
+    .send
+    {
+        margin-left: 10rem;
+    }
+}
+@media(max-width:480px) {
+    .container
+    {
+        margin-left: 8rem;
+    }
+    .send
+    {
+        margin-left: 10rem;
+    }
 }
