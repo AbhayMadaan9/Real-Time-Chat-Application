@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YarraDiChataa</title>
+    <link rel="icon" type="image/x-icon" href="whatsapp.png">
+    <link rel="stylesheet" href="style.css">
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/0f3c009a2f.js" crossorigin="anonymous" type="text/javascript"></script>
+    <script defer src="http://localhost:8000/socket.io/socket.io.js"></script>   <!-- this connects client with server i(from docs.) -->
+    <script defer src="client.js"></script> <!-- If defer is present, The script is downloaded in parallel to parsing the page(dom of page), and executed after the page has finished parsing. -->
+</head>
+
+<body>
+    <div class="container">
+        <div class="messages">
+            <div class="text-send">
+            
+            </div>
+            <div class="text-receive">
+
+            </div>
+        </div>
+    </div>
+        <div class="send">
+            <!-- form has onsubmit event which will be listened -->
+            <form action="#" id="sending_container">
+                <ul>
+                    <li><input type="text" name="messagesend" placeholder="Type here...."></li>
+                    <li><button type="submit" title="submit"><i class="fa-solid fa-circle-arrow-right"></i></button></li>
+                </ul>
+            
+            </form>
+        </div>
+</body>
+
+</html>

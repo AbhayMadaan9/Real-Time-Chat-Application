@@ -2,12 +2,16 @@
 
 //The main idea behind Socket.IO is that you can send and receive any events you want, with any data you want.
 //Any objects that can be encoded as JSON will do, and binary data is supported too.`
-const httpServer = require("http").createServer();
-const io = require('socket.io')(8000,httpServer,{
-  cors: {
-    origin: 'http://localhost:5500',
-    method: ['GET', 'POST']
+// import { io } from "socket.io-client"
+const http = require("http").createServer();
+const io = require('socket.io')(8000,{
+  cors :{
+    "Access-Control-Allow-Origin": ['http://127.0.0.1:5500/'],
+    origin: "*"
   }
+    // "Access-Control-Allow-Origin": "*", //accepting the client request from all the origins
+    // "Access-Control-Allow-Methods": ["POST", "GET"],
+    // "Content-type": "text/javascript"
 }) //This server(io) is the instance of socket.io, it will listen all the events which are emmited 
 const users = {}
 //when the connection is made all the coustom events are listened in it 
