@@ -19,8 +19,12 @@ body
     overflow-y: scroll;
     min-width: 25rem;
 }
+.container p
+{
+    font-size: 2rem;
+}
 
-.container .messages .text-send 
+.container .text-send 
 {
     /* padding: 5px; */
     background-color: #61ea69;
@@ -28,24 +32,36 @@ body
     margin-left: auto;
     margin: 20px 20px 10px 10px;
 }
-.container .messages .text-send p
+.container .text-send p
 {
     text-align: end;
     margin-right: 20px; 
 }
-.container .messages .text-receive
+.container .text-receive
 {
     /* padding: 5px; */
     background-color:#61ea69;
     border-radius: 25px;
     margin: 20px 20px 10px 10px;
 }
-.container .messages .text-receive p
+.container .text-receive p
 {
     text-align: start;
     margin-left: 20px;
 }
-.send
+.container .enter
+{
+    /* background-color:yellow; */
+    border-radius: 25px;
+    margin: 20px 20px 10px 10px;
+}
+.container .enter p
+{ 
+    text-align: center;
+    font-weight: bold;
+    color: black;
+}
+#send
 {
         background-color: #273be2;
         border-radius: 10px;
@@ -53,7 +69,7 @@ body
         padding: .2rem;
         min-width: 25rem;
 }
-.send form ul
+#send form ul
 {
         display: flex;
         list-style: none;
@@ -61,20 +77,20 @@ body
         justify-content: space-between;
         text-align: center;
 }
-.send form ul li input
+#send form ul li input
 {
     border-radius: 5px;
     padding: 1rem;
     font-size: large;
     margin-left: -2rem;
 }
-.send form ul li button
+#send form ul li button
 {
 
     border-radius: 1rem;
     padding: 1.2rem;
 }
-.send form ul li button i
+#send form ul li button i
 {
     font-size: x-large;
 }
@@ -83,7 +99,7 @@ body
     {
         margin-left: 10rem;
     }
-    .send
+    #send
     {
         margin-left: 10rem;
     }
@@ -93,7 +109,7 @@ body
     {
         margin-left: 8rem;
     }
-    .send
+    #send
     {
         margin-left: 10rem;
     }
@@ -103,7 +119,7 @@ body
     {
         margin-left: 3rem;
     }
-    .send
+    #send
     {
         margin-left: 3rem;
     }

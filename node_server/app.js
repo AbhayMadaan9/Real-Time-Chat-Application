@@ -18,20 +18,16 @@ const users = {}
 io.on('connection', socket=>{ //io.on will handle all the events(new connections i.e. new user, new message by the user)  here it means when connection comes arrow func. runs having socket as parameter
 
   //New connection is made 
-  socket.on('new-user-joined', name=>{ //socket will handle all coustomized events in clinet.js
+  socket.on('new-user', name=>{ //socket will handle all coustomized events in clinet.js
     console.log('user name: ' + name)
     users[socket.id] = name; 
-    socket.broadcast.emit('User-Joined', name)  //This will broadcast the message
+    socket.broadcast.emit('user-joined', name)  //This will broadcast the message to all the connected users
   })
-  //Message handling
-  // socket.on('send', message=>{
-  //   socket.broadcast.emit('receive', {message:message, name:users[socket.id]}) //this will broadcast the object having name, message
-  // })
+  //Receving message from another user
+  socket.on('send', message=>{ //this send is according to that user
+    socket.broadcast.emit('receive', {message:message, name:users[socket.id]}) //this will broadcast the message send by users to all the others connected users 
+  })
 
-})
-
-io.on('send', message=>{ //io will handle all the events
-    socket.broadcast.emit('receive', {message:message, name: users[socket.id]})  //This will broadcast the  coustomized message
 })
 
 

@@ -2,5 +2,9 @@
   "dependencies": {
     "socket.io": "^4.5.2",
     "socket.io-client": "^4.5.2"
-  }
+  },
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "start": "node ./client.js"
+}
 }
