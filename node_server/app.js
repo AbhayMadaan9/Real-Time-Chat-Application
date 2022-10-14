@@ -2,8 +2,8 @@
 
 //The main idea behind Socket.IO is that you can send and receive any events you want, with any data you want.
 //Any objects that can be encoded as JSON will do, and binary data is supported too.`
-// import { io } from "socket.io-client"
-const http = require("http").createServer();
+ 
+//const http = require("http").createServer();
 const io = require('socket.io')(8000,{
   cors :{
     "Access-Control-Allow-Origin": ['http://127.0.0.1:5500/'],
@@ -21,7 +21,7 @@ io.on('connection', socket=>{ //io.on will handle all the events(new connections
   socket.on('new-user', name=>{ //socket will handle all coustomized events in clinet.js
     console.log('user name: ' + name)
     users[socket.id] = name; 
-    socket.broadcast.emit('user-joined', name)  //This will broadcast the message to all the connected users
+    socket.broadcasti.emit("user-joined", name)  //This will broadcast the message to all the connected users
   })
   //Receving message from another user
   socket.on('send', message=>{ //this send is according to that user

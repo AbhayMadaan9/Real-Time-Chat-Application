@@ -11,7 +11,7 @@ const messageContainer_send = document.querySelector('div.text-send')
 const messageContainer_receive = document.querySelector('div.text-receive')
 const messageContainer_enter = document.querySelector('div.enter')
 const data = document.getElementById("send")
-
+const messagesend = document.getElementById('message')
 function append(message, message_type) {
 
     if (message_type == 'text-send') {
@@ -43,12 +43,13 @@ function append(message, message_type) {
 
 }
 
-// data.addEventListener('submit', (e)=>{
-//     e.preventDefault() //this prevents from reloading the page
-//     const message = messagesend.value;
-//     append(message, 'text-send') //To know what we have send
-//     socket.emit('send', message) //To send the message to others
-// })
+data.addEventListener('submit', (e)=>{
+    e.preventDefault() //this prevents from reloading the page
+    const message = messagesend.value;
+    append(message, 'text-send') //To know what we have send
+    socket.emit('send', message) //To send the message to others
+    messagesend.value = ''
+})
 
 const name = prompt("Enter your Name: ")
 
@@ -57,6 +58,7 @@ socket.emit('new-user', name) //this is custom event made and emmited which is l
 
 //socket.on will listen incoming data. 
 socket.on('user-joined', name => {
+    console.log("hello is there anyone")
     append(`${name} joined the chat`, 'enter')
 })
 socket.on('reveive', (obj)=>{ //an object containing message and users are received from server
