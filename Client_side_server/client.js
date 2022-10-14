@@ -10,8 +10,10 @@ const socket = io('http://localhost:8000', {
 const messageContainer_send = document.querySelector('div.text-send')
 const messageContainer_receive = document.querySelector('div.text-receive')
 const messageContainer_enter = document.querySelector('div.enter')
+const messageContainer_leave = document.querySelector('div.leave')
 const data = document.getElementById("send")
 const messagesend = document.getElementById('message')
+var sound = new Audio('ting.mp3')
 function append(message, message_type) {
 
     if (message_type == 'text-send') {
@@ -29,8 +31,8 @@ function append(message, message_type) {
         const text = document.createTextNode(message)
         //appending
         para.appendChild(text)
-
         messageContainer_receive.appendChild(para);
+        sound.play()
     }
     if (message_type == 'enter') {
         //creation
@@ -39,6 +41,14 @@ function append(message, message_type) {
         //appending
         para.appendChild(text)
         messageContainer_enter.appendChild(para);
+    }
+    if (message_type == 'leave') {
+        //creation
+        const para = document.createElement('p')
+        const text = document.createTextNode(message)
+        //appending
+        para.appendChild(text)
+        messageContainer_leave.appendChild(para);
     }
 
 }
@@ -64,5 +74,9 @@ socket.on('user-joined', name => {
 socket.on('reveive', (obj)=>{ //an object containing message and users are received from server
     append(obj.message, 'text-receive')
 })
+socket.on('leave', name=>{
+    append(`${name} left the chat`, 'leave')
+})
+
 
 

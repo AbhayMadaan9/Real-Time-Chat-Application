@@ -27,7 +27,11 @@ io.on('connection', socket=>{ //io.on will handle all the events(new connections
   socket.on('send', message=>{ //this send is according to that user
     socket.broadcast.emit('receive', {message:message, name:users[socket.id]}) //this will broadcast the message send by users to all the others connected users 
   })
-
+  //disconnecting 
+  socket.on('disconnect', ()=>{
+    socket.broadcast.emit('leave', users[socket.id])
+    delete users[socket.id]
+    })
 })
 
 
