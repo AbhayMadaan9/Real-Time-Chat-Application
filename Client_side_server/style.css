@@ -24,36 +24,43 @@ body
     font-size: 2rem;
 }
 
-.container .text-send 
+.text
 {
-    /* padding: 5px; */
+    padding: 1px;
     background-color: #61ea69;
+    width: fit-content;
     border-radius: 25px;
     margin-left: auto;
-    margin: 20px 20px 10px 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
-.container .text-send p
+.send
+{
+    /* margin: 20px 20px 10px 10px; */
+    float: right;
+    clear: both;
+}
+.send p
 {
     text-align: end;
-    margin-right: 20px; 
+    /* margin-right: 20px;  */
 }
-.container .text-receive
+.receive
 {
-    /* padding: 5px; */
-    background-color:#61ea69;
-    border-radius: 25px;
-    margin: 20px 20px 10px 10px;
+    /* margin: 20px 20px 10px 10px; */
+    float: left;
+    clear: both;
 }
-.container .text-receive p
+.receive p
 {
     text-align: start;
-    margin-left: 20px;
+    /* margin-left: 20px; */
 }
 .container .enter
 {
     /* background-color:yellow; */
     border-radius: 25px;
-    margin: 20px 20px 10px 10px;
+    /* margin: 20px 20px 10px 10px; */
 }
 .container .enter p
 { 
@@ -65,7 +72,7 @@ body
 {
     /* background-color:yellow; */
     border-radius: 25px;
-    margin: 20px 20px 10px 10px;
+    /* margin: 20px 20px 10px 10px; */
 }
 .container .enter p
 { 
